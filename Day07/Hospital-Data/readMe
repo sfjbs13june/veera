@@ -1,0 +1,43 @@
+##Curl commands
+
+Patient
+ post:
+  curl --location --request POST 'http://localhost:8080/savePatient' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "patientname": "hari",
+      "patientid": 143,
+      "hospitalname": "kkr",
+      "disease": "yyy"
+  }'
+
+  Get:
+  curl --location --request GET 'http://localhost:8080/getpatient?patientname=hari'
+
+  Put:
+  curl --location --request PUT 'http://localhost:8080/updatepatient?patientname=hari&hospitalname=Sandhya' \
+  --data-raw ''
+
+  Delete:
+  curl --location --request DELETE 'http://localhost:8080/removepatient?patientname=hari'
+
+
+  Hospital:
+  Post:
+  curl --location --request POST 'http://localhost:8080/savehospital' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "hospitalname": "kkr",
+      "hospitalid": "kk123",
+      "address": "Panjagutta"
+  }'
+
+  Get:
+  curl --location --request GET 'http://localhost:8080/gethospital?hospitalname=kkr'
+
+  Put:
+  curl --location --request PUT 'http://localhost:8080/updatehospital?hospitalname=kkr&address=Ameerpet' \
+  --data-raw ''
+
+  Delete:
+  curl --location --request DELETE 'http://localhost:8080/removehospital?hospitalname=kkr'

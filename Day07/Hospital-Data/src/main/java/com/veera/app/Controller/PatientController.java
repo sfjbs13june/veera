@@ -17,12 +17,12 @@ public class PatientController {
         return patient;
     }
 
-    @GetMapping("/get/patient")
+    @GetMapping("/getpatient")
     public Patient getPatient(@RequestParam("patientname") String patientname){
         return patientMap.get(patientname);
     }
 
-    @PutMapping("/update/patient")
+    @PutMapping("/updatepatient")
     public Patient updatePatient(@RequestParam("patientname") String patientname, @RequestParam("hospitalname") String hospitalname){
         Patient patient=patientMap.get(patientname);
         patient.setHospitalname(hospitalname);
@@ -32,8 +32,8 @@ public class PatientController {
     }
 
 
-    @DeleteMapping("/remove/patient")
-    public void deletePatient(@RequestParam("Patientname") String patientname){
+    @DeleteMapping("/removepatient")
+    public void deletePatient(@RequestParam("patientname") String patientname){
         patientMap.remove(patientname);
     }
 

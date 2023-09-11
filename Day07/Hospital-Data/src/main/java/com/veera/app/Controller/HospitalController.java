@@ -18,22 +18,22 @@ public class HospitalController {
         return hospital;
     }
 
-    @GetMapping("/get/hospital")
+    @GetMapping("/gethospital")
     public Hospital gethospital(@RequestParam("hospitalname") String hospitalname){
         return hospitalMap.get(hospitalname);
     }
 
-    @PutMapping("/update/hospital")
+    @PutMapping("/updatehospital")
     public Hospital updatehospital(@RequestParam("hospitalname") String hospitalname, @RequestParam("address") String address){
         Hospital hospital=hospitalMap.get(hospitalname);
-        hospital.setHospitalname(hospitalname);
+        hospital.setAddress(address);
         hospitalMap.put(hospitalname,hospital);
         return hospital;
 
     }
 
 
-    @DeleteMapping("/remove/hospital")
+    @DeleteMapping("/removehospital")
     public void deletehospital(@RequestParam("hospitalname") String hospitalname){
         hospitalMap.remove(hospitalname);
     }
