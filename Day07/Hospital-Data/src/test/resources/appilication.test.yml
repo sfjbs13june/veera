@@ -1,0 +1,27 @@
+patient:
+  Create:
+    url:
+      /save
+  read:
+    url:
+      /get
+  update:
+    url:
+      /update
+  delete:
+    url:
+      /delete
+
+hospital:
+  Create:
+    url:
+      /saveHos
+  read:
+    url:
+      /getHos
+  update:
+    url:
+      /updateHos
+  delete:
+    url:
+      /deleteHos
