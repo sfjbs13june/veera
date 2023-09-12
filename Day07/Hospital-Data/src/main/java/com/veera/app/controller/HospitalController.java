@@ -1,7 +1,6 @@
-package com.veera.app.Controller;
+package com.veera.app.controller;
 
 import com.veera.app.model.Hospital;
-import com.veera.app.model.Patient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;

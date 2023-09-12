@@ -1,6 +1,6 @@
-package UnitTestCases;
+package com.veera.app.unittest;
 
-import com.veera.app.Controller.PatientController;
+import com.veera.app.controller.PatientController;
 import com.veera.app.model.Patient;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,10 +1,9 @@
-package componentTestCases;
+package com.veera.app.componenttest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
-import com.veera.app.Controller.HospitalController;
+import com.veera.app.controller.HospitalController;
 import com.veera.app.model.Hospital;
-import com.veera.app.model.Patient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
