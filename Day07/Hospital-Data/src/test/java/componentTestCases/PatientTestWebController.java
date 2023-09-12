@@ -58,7 +58,7 @@ public class PatientTestWebController {
     }
 
     @Test
-    public void test_web_getpatient() throws Exception{
+    public void test_web_getpatient() throws Exception {
         Patient patient=new Patient("abc",123,"prime","kukatpally");
         ResultActions resultActions_create= mockMvc.perform(post(createurl).contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(patient)).accept(MediaType.APPLICATION_JSON));
