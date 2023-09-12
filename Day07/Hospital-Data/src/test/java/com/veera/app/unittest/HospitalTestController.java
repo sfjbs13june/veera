@@ -1,6 +1,6 @@
-package UnitTestCases;
+package com.veera.app.unittest;
 
-import com.veera.app.Controller.HospitalController;
+import com.veera.app.controller.HospitalController;
 import com.veera.app.model.Hospital;
 import org.junit.Test;
 import org.junit.runner.RunWith;

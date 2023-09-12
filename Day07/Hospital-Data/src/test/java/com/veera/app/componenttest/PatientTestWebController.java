@@ -1,7 +1,7 @@
-package componentTestCases;
+package com.veera.app.componenttest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.veera.app.Controller.PatientController;
+import com.veera.app.controller.PatientController;
 import com.veera.app.model.Patient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
