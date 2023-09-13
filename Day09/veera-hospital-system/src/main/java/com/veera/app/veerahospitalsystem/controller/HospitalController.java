@@ -28,14 +28,14 @@ public class HospitalController {
     }
 
     @PutMapping("/update")
-    public String updateHospitalDetails(@RequestParam("pid") int pid,@RequestBody Hospital hospital){
+    public String updateHospitalDetails(@RequestParam("hid") int pid,@RequestBody Hospital hospital){
         hospitalRepository.save(hospital);
         return "updated Succesfully";
     }
 
 
     @DeleteMapping("/delete")
-    public String deleteHospitalDetails(@RequestParam("pid") int pid){
+    public String deleteHospitalDetails(@RequestParam("hid") int pid){
         hospitalRepository.deleteById(pid);
         return "deleted Succesfully";
     }
