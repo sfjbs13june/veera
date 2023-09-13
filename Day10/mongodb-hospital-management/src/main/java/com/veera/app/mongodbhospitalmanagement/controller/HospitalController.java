@@ -28,14 +28,14 @@ public class HospitalController {
 
     @RequestMapping(value = "/update" , method = RequestMethod.PUT)
     public Hospital updatehospital(@RequestParam("hospitalname") String hospitalname, @RequestParam("address") String address){
-        Hospital hospital= hospitalRepository.findByHospitalName(hospitalname);
+        Hospital hospital= hospitalRepository.findByhospitalname(hospitalname);
         hospital.setAddress(address);
         return hospitalRepository.save(hospital);
     }
 
     @RequestMapping(value = "/delete" , method = RequestMethod.DELETE)
     public String removehospital(@RequestParam("hospitalname") String hospitalname) {
-        hospitalRepository.deleteByHospitalName(hospitalname);
+        hospitalRepository.deleteByhospitalname(hospitalname);
         return "Deleted Successfully!!!";
     }
 

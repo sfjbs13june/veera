@@ -7,18 +7,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HospitalRepository extends MongoRepository<Hospital, String> {
 
+    public Hospital findByhospitalname(String hospitalname);
 
-    public Hospital findByHospitalName(String hospitalname);
+    public Hospital findByhospitalid(String hospitalid);
 
-    public Hospital findByHospitalId(String hospitalid);
+    public Hospital findByaddress(String address);
 
-    public Hospital findByAddress(String address);
+    public Hospital deleteByaddress(String address);
 
-    public Hospital deleteByAddress(String address);
+    public Hospital deleteByhospitalname(String hospitalname);
 
-    public Hospital deleteByHospitalName(String hospitalname);
-
-
-
-
+    public Hospital save(Hospital hospital);
 }

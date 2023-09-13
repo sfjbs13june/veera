@@ -1,14 +1,9 @@
 package com.veera.app.mongodbhospitalmanagement.controller;
 
-
-import com.veera.app.mongodbhospitalmanagement.model.Hospital;
 import com.veera.app.mongodbhospitalmanagement.model.Patient;
 import com.veera.app.mongodbhospitalmanagement.respository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/patient")
@@ -17,32 +12,26 @@ public class PatientController {
     @Autowired
     PatientRepository patientRepository;
 
-    @PostMapping("/save")
-    public Patient savePatientDetails(@RequestBody Patient patient){
-
+    @RequestMapping(value = "/save" , method = RequestMethod.POST)
+    public Patient savePatient(@RequestBody Patient patient) {
         return patientRepository.save(patient);
     }
 
-    @GetMapping("/get")
-    public List<Patient> getPatientdetails()
-    {
-
-        return (List<Patient>) patientRepository.findAll();
+    @RequestMapping(value = "/read" , method = RequestMethod.GET)
+    public <List>Patient getPatient(@RequestParam("patientname") String patientname) {
+        return (Patient) patientRepository.findAll();
     }
 
-    @PutMapping("/update")
-    public String updatePatientDetails(@RequestParam("patientname") String patientname, @RequestParam("hospitalname") String hospitalname) {
+    @RequestMapping(value = "/update" , method = RequestMethod.PUT)
+    public Patient updatePatient(@RequestParam("patientname") String patientname, @RequestParam("hospitalname") String hospitalname) {
         Patient patient=patientRepository.findByPatientName(patientname);
         patient.setHospitalname(hospitalname);
-        patientRepository.save(patient);
-        return "updated succesfully";
+        return patientRepository.save(patient);
     }
 
-    @DeleteMapping("/delete")
-    public String deletePatientDetails(@RequestParam("patientname") String patientname){
-        patientRepository.deleteById(patientname);
-        return "deleted Succesfully";
+    @RequestMapping(value = "/delete" , method = RequestMethod.DELETE)
+    public String deletePatient(@RequestParam("patientname") String patientname) {
+        patientRepository.deleteByPatientName(patientname);
+        return "deleted";
     }
-
-
 }
