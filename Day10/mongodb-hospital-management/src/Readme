@@ -8,6 +8,7 @@ mvn clean install
 
 ```
 docker-compose -f docker-compose-mongo.yml up -d
+
 mvn spring-boot:run
 
 ```
@@ -20,4 +21,45 @@ mvn install dockerfile:build
 ## running docker compose
 
 ```
-docker-compose up -d
+###post
+
+curl --location --request POST 'http://localhost:8083/hospital/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "hospitalname":"primer",
+    "hospitalid":"999",
+    "address": "kkpa"
+}'
+
+##get
+
+curl --location --request GET 'http://localhost:8083/hospital/read'
+
+###PUT
+
+curl --location --request PUT 'http://localhost:8083/hospital/update?hospitalname=abc&address=ammer' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "hospitalname":"sgajff",
+    "hospitalid":"sahgfahs",
+    "address": "123"
+}'
+
+###DELETE
+
+curl --location --request DELETE 'http://localhost:8083/hospital/delete?hospitalname=abc'
+
+
+## Show data
+
+```
+docker exec -it spring-mongo-app-mongo-1 bash
+
+mongo
+
+show dbs
+
+show tables
+
+db.patient.find()
+db.hospital.find()

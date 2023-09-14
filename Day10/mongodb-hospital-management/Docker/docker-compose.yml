@@ -1,7 +1,7 @@
 version: '3'
 services:
   mongo-app:
-    image: veera005/spring-mongo-app:1.0.0
+    image: mongodb-hospital-management:1.0.0
     ports:
       - "8083:8083"
     environment:
