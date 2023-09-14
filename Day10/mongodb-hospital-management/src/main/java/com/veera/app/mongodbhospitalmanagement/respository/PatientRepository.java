@@ -7,15 +7,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PatientRepository extends MongoRepository<Patient, String> {
 
-    public Patient findByPatientName(String patientname);
+    public Patient findBypatientname(String patientname);
 
-    public Patient findByPatientId(String patientid);
-
-    public Patient findByHospitalName(String hospitalname);
-
-    public Patient findByDisease(String disease);
-
-    public Patient deleteByPatientName(String patientname);
+    public Patient deleteBypatientname(String patientname);
 
     public Patient save(Patient patient);
 }

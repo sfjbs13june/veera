@@ -22,7 +22,7 @@ public class HospitalController {
     }
 
     @RequestMapping(value = "/read" , method = RequestMethod.GET)
-    public List<Hospital> gethospital(@RequestParam("hospitalname") String hospitalname) {
+    public List<Hospital> gethospital() {
         return hospitalRepository.findAll();
     }
 

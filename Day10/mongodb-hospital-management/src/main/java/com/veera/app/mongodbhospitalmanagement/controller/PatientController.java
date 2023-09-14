@@ -24,14 +24,14 @@ public class PatientController {
 
     @RequestMapping(value = "/update" , method = RequestMethod.PUT)
     public Patient updatePatient(@RequestParam("patientname") String patientname, @RequestParam("hospitalname") String hospitalname) {
-        Patient patient=patientRepository.findByPatientName(patientname);
+        Patient patient=patientRepository.findBypatientname(patientname);
         patient.setHospitalname(hospitalname);
         return patientRepository.save(patient);
     }
 
     @RequestMapping(value = "/delete" , method = RequestMethod.DELETE)
     public String deletePatient(@RequestParam("patientname") String patientname) {
-        patientRepository.deleteByPatientName(patientname);
+        patientRepository.deleteBypatientname(patientname);
         return "deleted";
     }
 }
