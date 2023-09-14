@@ -1,0 +1,40 @@
+Student
+
+## Build the app
+
+```
+mvn clean install
+```
+
+## Run the app
+
+```
+docker-compose -f docker-compose-mongo.yml up -d
+mvn spring-boot:run
+
+```
+## Creating docker image
+
+```
+mvn install dockerfile:build
+
+```
+## running docker compose
+
+```
+docker-compose up -d
+
+```
+
+
+## Post
+
+ curl --request POST 'http://localhost:8083/student/create' --header 'Content-Type: application/json' --data-raw '{"name": "Rama","id": "1re206", "roll":"rama123445"}'
+
+
+##read
+
+ curl -X GET http://localhost:8083/student/read
+
+ $ curl -X GET http://localhost:8083/student/read?1re206
+
