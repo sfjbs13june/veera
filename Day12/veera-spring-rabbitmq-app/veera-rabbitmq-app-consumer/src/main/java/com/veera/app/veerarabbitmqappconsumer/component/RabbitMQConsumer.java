@@ -29,12 +29,13 @@ public class RabbitMQConsumer {
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.name}")
-    public void recievedpatMessage(Patient patient) {
-        System.out.println("Recieved Message From RabbitMQ: " + patient);
+    public void recievedhospitalMessage(Hospital hospital) {
+        System.out.println("Recieved Hospital Message From RabbitMQ: " + hospital);
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.name}")
-    public void recievedhosMessage(Hospital hospital) {
-        System.out.println("Recieved Message From RabbitMQ: " + hospital);
+    public void recievedpatientMessage(Patient patient) {
+        System.out.println("Recieved Patient Message From RabbitMQ: " + patient);
     }
 }
+
