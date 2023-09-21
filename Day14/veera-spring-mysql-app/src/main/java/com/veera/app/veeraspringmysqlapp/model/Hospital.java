@@ -16,14 +16,14 @@ public class Hospital {
     private String hospitalname;
 
     @Column(name ="hospitalid")
-    private String hospitalid;
+    private String address;
 
     public Hospital(){}
 
-    public Hospital(int hid, String hospitalname, String hospitalid) {
+    public Hospital(int hid, String hospitalname, String address) {
         this.hid = hid;
         this.hospitalname = hospitalname;
-        this.hospitalid = hospitalid;
+        this.address = address;
     }
 
     public int getHid() {
@@ -42,11 +42,11 @@ public class Hospital {
         this.hospitalname = hospitalname;
     }
 
-    public String getHospitalid() {
-        return hospitalid;
+    public String getAddress() {
+        return address;
     }
 
-    public void setHospitalid(String hospitalid) {
-        this.hospitalid = hospitalid;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
