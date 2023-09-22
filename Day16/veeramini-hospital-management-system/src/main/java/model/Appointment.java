@@ -3,8 +3,6 @@ package model;
 import org.springframework.data.annotation.Id;
 
 public class Appointment {
-
-    @Id
     private String appointmentId;
     private String patientName;
     private String doctorName;
