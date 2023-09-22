@@ -8,22 +8,23 @@ import repository.AppointmentRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/patient")
+@RequestMapping(value ="/patient")
 public class PatientController {
 
     @Autowired
-    AppointmentRepository appointmentRepository;
+    private AppointmentRepository appointmentRepository;
 
-    @PostMapping("/save")
+    @PostMapping(value="/save")
     public Appointment saveAppointment(@RequestBody Appointment appointment){
         return appointmentRepository.save(appointment);
     }
 
-    @GetMapping("/myappointments")
-    public List<Appointment> getMyappointments(@RequestParam String patientName){
-        Appointment appointment= appointmentRepository.findBypatientName(patientName);
-        return (List<Appointment>) appointment;
+    @GetMapping(value="/myappointment")
+    public Appointment getAppointments(@RequestParam String patientName){
+        Appointment appointment=appointmentRepository.findBypatientName(patientName);
+        return  appointment;
     }
 
 
 }
+

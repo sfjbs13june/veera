@@ -8,22 +8,27 @@ import repository.PrescriptionRepository;
 import java.util.List;
 
 @RestController
-//@RequestMapping(value ="/prescription")
 public class PrescriptionController {
 
     @Autowired
-    PrescriptionRepository prescriptionRepository;
+    private PrescriptionRepository prescriptionRepository;
 
     @PostMapping("/saveprescription")
-    public Prescription saveprescription(@RequestBody Prescription prescription){
-        return prescriptionRepository.save(prescription);
+    public Prescription saveprescription(@RequestBody Prescription prescription)
+    {
+        Prescription pres=prescriptionRepository.save(prescription);
+        return pres;
     }
 
     @GetMapping("/viewprescription")
-    public List<Prescription> getprescription (@RequestParam String patientName){
+    public Prescription getprescription(@RequestParam String patientName){
         Prescription prescription=prescriptionRepository.findBypatientName(patientName);
-        return (List<Prescription>) prescription;
+        return prescription;
     }
 
-
+    @GetMapping(value ="/get")
+    public  String getData()
+    {
+        return "String displayed";
+    }
 }

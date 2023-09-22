@@ -12,16 +12,16 @@ import java.util.List;
 public class DoctorController {
 
     @Autowired
-    AppointmentRepository appointmentRepository;
+    private AppointmentRepository appointmentRepository;
 
-    @PostMapping("/save")
+    @PostMapping(value ="/save")
     public Appointment saveAppointment(@RequestBody Appointment appointment){
         return appointmentRepository.save(appointment);
     }
 
-    @GetMapping("/doctorappointment") public List<Appointment> getAppointment(@RequestParam String doctorName){
-        Appointment appointment=appointmentRepository.findBydoctorName(doctorName);
-        return (List<Appointment>) appointment;
+    @GetMapping(value = "/doctorappointment")
+    public Appointment getAppointment(@RequestParam String docterName){
+        Appointment appointment=appointmentRepository.findBydoctorName(docterName);
+        return appointment;
     }
-
 }
