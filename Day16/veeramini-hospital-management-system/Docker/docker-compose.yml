@@ -5,7 +5,7 @@ services:
     ports:
       - "8083:8083"
     environment:
-      spring.data.mongodb.uri: mongodb://mongo:27017/hospitalsystem
+      spring.data.mongodb.uri: mongodb://mongo:27017/data
     depends_on:
       - mongo
     networks:
